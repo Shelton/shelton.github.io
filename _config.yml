@@ -7,7 +7,7 @@ relative_permalinks: false
 # Setup
 title:               Operable
 tagline:             'Creators of COG!'
-description:         'Cog cog cog cog cog!'
+description:         'Words about Operable and the creation of Cog, the most amazing bot known to humans.'
 url:                 http://lanyon.getpoole.com
 baseurl:             ''
 paginate:            2
