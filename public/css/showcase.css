@@ -1,0 +1,8 @@
+.showcase-wrapper {
+  background-image: url(/public/space_background5.png);
+  background-color: #212121;
+  color: #fff;
+  background-size: cover;
+  padding-bottom: 6rem;
+  background-position: bottom center;
+}

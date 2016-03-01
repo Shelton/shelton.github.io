@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  {% include head.html %}
+
+  <body class="layout-reverse">
+
+    {% include sidebar.html %}
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="showcase-wrapper">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+              <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/images/logo_bluewhite.png"></a>
+          </h3>
+        </div>
+      </div>
+
+      <div class="showcase">
+          <div class="showcase-text">
+            <h1 class="showcase-heading">Introducing <span style="font-size:1.25em; clear: both; display: block">Cog,</span> the open chatops platform you've been looking for.</h1>
+            <p class="showcase-subtext">Secure collaborative commandline right in your chat window.</p>
+            <a href="https://github.com/operable/cog#cog-operables-chatops-bot" class="large-btn"><span class="octicon octicon-mark-github"></span> Get Cog Today!</a>
+          </div>
+        <div class="showcase-figure">
+            <img class="showcase-img" src="{{ site.baseurl }}/images/IntroCog_Badge_NoChar.png" alt="placeholder" style="width=50px">
+          </div>
+        </div>
+    </div>
+    <div class="links-wrapper">
+  <div class="links">
+    <div class="link">
+      <a href="#">
+        <p class="link-desc">our words</p>
+        <h2 class="link-title"><i class="fa fa-medium"></i>BLOG</h2>
+      </a>
+    </div>
+    <div class="link">
+      <a href="#">
+        <p class="link-desc">github</p>
+        <h2 class="link-title"><i class="fa fa-github"></i> PROJECT</h2>
+      </a>
+    </div>
+    <div class="link">
+      <a href="#">
+        <p class="link-desc">chat with operable</p>
+        <h2 class="link-title">CONTACT</h2>
+      </a>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>
