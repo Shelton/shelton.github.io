@@ -1,3 +1,19 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @Shelton
+ Watch 55
+  Star 1,361
+ Fork 904 poole/lanyon
+ Code  Issues 14  Pull requests 21  Pulse  Graphs
+Branch: master Find file Copy pathlanyon/public/css/lanyon.css
+bec9ea9  on Apr 19, 2015
+@mdo mdo Merge pull request #103 from poole/focus
+3 contributors @mdo @fmichonneau @hnrch02
+RawBlameHistory     564 lines (500 sloc)  12.5 KB
 /*
  *  ___
  * /\_ \
@@ -41,7 +57,7 @@ body {
 }
 
 html {
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-family: "PT Serif", Georgia, "Times New Roman", serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -65,118 +81,6 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-/* Background image
-*/
-
-.showcase {
-    max-width: 80%;
-    margin: auto;
-    overflow: hidden;
-  }
-
-.showcase-wrapper {
-  background-image: url(/images/space_background5.png);
-  background-color: #212121;
-  background-size: cover;
-  background-position: bottom center;
-  min-height: 37rem;
-}
-
-.showcase-heading {
-  margin-top: 0;
-  font-size: 2em;
-  font-weight: normal;
-  line-height: 1.375em;
-}
-
-.showcase-text {
-  width: 40%;
-  display: inline-block;
-}
-
-.showcase-heading, .showcase-subtext {
-  color: #fff;
-}
-
-.showcase-subtext {
-  font-size: 1.5rem;
-  line-height: 1.7rem;
-  font-weight: lighter;
-}
-
-.showcase-figure {
-  width: 50%;
-  display: inline-block;
-  float: right;
-}
-
-.showcase-img {
-  width: auto;
-  margin: auto;
-}
-
-.large-btn {
-    display: inline-block;
-    border: solid 2px;
-    padding: 0.4em 0.5em;
-    font-weight: bold;
-    border-radius: 0.125em;
-    text-align: center;
-    font-size: 1.25em;
-    text-transform: uppercase;
-    min-width: 12em;
-    color: #fff;
-    background-color: rgba(255, 255, 255, .1);
-  }
-
-  a:hover {
-    background-color: rgba(255, 255, 255, .3);
-    -o-transition:.9 ease-in;
-    -ms-transition:.9 ease-in;
-    -moz-transition:.9 ease-in;
-    -webkit-transition:.9 ease-in;
-    transition:.9 ease-in;
-    text-decoration: none;
-  }
-
-
-  .links-wrapper {
-    background-color: rgba(29, 29, 29, 1);
-    color: white;
-    background-position: bottom center:
-  }
-
-  .links {
-    max-width: 80%;
-    margin: auto;
-    overflow: hidden;
-    width: 100%;
-    display: table;
-    table-layout: fixed;
-  }
-
-  .link {
-  display: table-cell;
-  color: #fff;
-}
-  a {
-    text-decoration: none;
-    padding: 0.375em 0.5em;
-    display: block;
-    color: #fff;
-  }
-
-  a:hover {
-    background-color: rgba(255, 255, 255, .1);
-    color: #fff;
-  }
-}
-
-.link-desc, .link-title {
-  color: #fff;
-  margin: 0;
-  line-height: 1.25em;
-}
 
 /*
  * Container
@@ -185,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
  */
 
 .container {
-  min-width: 80%;
+  max-width: 28rem;
 }
 @media (min-width: 38em) {
   .container {
@@ -206,11 +110,11 @@ h1, h2, h3, h4, h5, h6 {
  */
 
 .masthead {
-  padding-top:    .5rem;
-  padding-bottom: .5rem;
-  max-width: 80%;
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #eee;
 }
-
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
@@ -260,7 +164,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 14rem;
   visibility: hidden;
   overflow-y: auto;
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
   font-size: .875rem; /* 15px */
   color: rgba(255,255,255,.6);
   background-color: #202020;
@@ -328,10 +232,9 @@ a.sidebar-nav-item:focus {
   left: 1rem;
   display: block;
   padding: .25rem .75rem;
-  color: #fff;
+  color: #505050;
+  background-color: #fff;
   border-radius: .25rem;
-  border-color: #fff;
-  border: 1px;
   cursor: pointer;
 }
 
@@ -350,6 +253,7 @@ a.sidebar-nav-item:focus {
 #sidebar-checkbox:focus ~ .sidebar-toggle,
 #sidebar-checkbox:checked ~ .sidebar-toggle {
   color: #fff;
+  background-color: #555;
 }
 
 .sidebar-toggle:active:before,
@@ -673,3 +577,5 @@ a.pagination-item:hover {
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
+Status API Training Shop Blog About Pricing
+© 2016 GitHub, Inc. Terms Privacy Security Contact Help

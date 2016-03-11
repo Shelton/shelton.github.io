@@ -5,19 +5,19 @@ permalink:           pretty
 relative_permalinks: false
 
 # Setup
-title:               Operable
-tagline:             'Creators of COG!'
-description:         'Words about Operable and the creation of Cog, the most amazing bot known to humans.'
-url:                 http://lanyon.getpoole.com
+title:               Shelton Davis
+tagline:             ''
+description:         'Adventuring with BandAids'
+url:                 http://shelton.github.com
 baseurl:             ''
-paginate:            2
+paginate:            1
 logo:
 
 # About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:              Shelton Davis
+  url:               https://twitter.com/shelton
+  email:             sheltonjdavis@gmail.com
 
 # Custom vars
 version:             1.0.0
