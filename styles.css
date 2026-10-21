@@ -1,40 +1,15 @@
 /* sheltondavis.com
-   One page, one stylesheet. The track is the bold part; everything else stays quiet. */
+   Carries the old site's look forward: noisy grid, Share Tech, grey link chips. */
 
 :root {
-  --paper: #f6f8fb;
-  --ink: #15233b;
-  --ink-soft: #4a5872;
-  --track: #1f4f8f;
-  --track-deep: #173c6e;
-  --chalk: #ffffff;
-  --bib: #ffd23f;
-  --rule: #d5dce8;
-
-  --display: "Big Shoulders Display", "Arial Narrow", sans-serif;
-  --body: "Atkinson Hyperlegible", system-ui, sans-serif;
-
-  --measure: 36rem;
-  --gutter: clamp(1rem, 4vw, 3rem);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --paper: #0e1626;
-    --ink: #e9eef7;
-    --ink-soft: #a7b3c9;
-    --track: #1d4a86;
-    --track-deep: #143661;
-    --rule: #26334a;
-  }
-}
-:root[data-theme="dark"] {
-  --paper: #0e1626;
-  --ink: #e9eef7;
-  --ink-soft: #a7b3c9;
-  --track: #1d4a86;
-  --track-deep: #143661;
-  --rule: #26334a;
+  --text: #444;
+  --heading: #181818;
+  --muted: #777;
+  --chip: rgba(51, 51, 51, 0.25);
+  --chip-hover: #333;
+  --chip-hover-text: #ccc;
+  --rule: #ccc;
+  --font: "Share Tech", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -43,194 +18,87 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font: 400 1.125rem/1.6 var(--body);
+  background: #e6e6e6 url(/images/noisy_grid.png) repeat;
+  color: var(--text);
+  font: 18px/28px var(--font);
+  -webkit-font-smoothing: antialiased;
 }
+
+::selection { background: #f0f; color: #0f0f0f; }
+
+h1, h2, h3 { color: var(--heading); font-family: var(--font); font-weight: normal; margin: 0; }
+h1 { font-size: 46px; line-height: 50px; }
+h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
+h3 { font-size: 28px; line-height: 34px; margin-bottom: 6px; }
+
+p { margin: 0 0 20px; }
+
+a, a:visited {
+  color: #333;
+  background-color: var(--chip);
+  text-decoration: none;
+  padding: 0 5px;
+}
+a:hover, a:focus-visible { background-color: var(--chip-hover); color: var(--chip-hover-text); }
+:focus-visible { outline: 2px solid #f0f; outline-offset: 2px; }
+
+hr { border: dotted var(--rule); border-width: 2px 0 0; margin: 10px 0 30px; height: 0; }
 
 img { display: block; max-width: 100%; height: auto; }
 
-a { color: inherit; text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
-a:hover { text-decoration-thickness: 0.16em; }
-:focus-visible { outline: 3px solid var(--bib); outline-offset: 3px; border-radius: 2px; }
+.skip { position: absolute; left: 16px; top: -40px; }
+.skip:focus { top: 12px; }
 
-.skip {
-  position: absolute; left: var(--gutter); top: -3rem;
-  background: var(--bib); color: #15233b; padding: 0.5rem 0.75rem; font-weight: 700;
-}
-.skip:focus { top: 0.75rem; }
+/* Layout: big photo on the left, content on the right */
 
-.wrap { max-width: 68rem; margin: 0 auto; padding: 0 var(--gutter); }
-
-/* Intro */
-
-.intro {
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 60px 24px 40px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(9rem, 17rem);
-  gap: clamp(1.5rem, 5vw, 4rem);
-  align-items: end;
-  padding-block: clamp(3rem, 9vw, 6.5rem) clamp(2rem, 5vw, 3.5rem);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 56px;
+  align-items: start;
 }
 
-.name {
+.photo {
+  position: sticky;
+  top: 40px;
   margin: 0;
-  font: 800 clamp(4rem, 15vw, 10.5rem)/0.82 var(--display);
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
+}
+.photo img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border-radius: 50%;
 }
 
-.lede {
-  max-width: var(--measure);
-  margin: 1.75rem 0 0;
-  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
-  line-height: 1.45;
+.content { max-width: 640px; }
+
+.tagline { font-size: 21px; line-height: 28px; color: var(--muted); margin: 6px 0 0; }
+
+.work { margin-bottom: 28px; }
+.work p { margin-bottom: 8px; }
+
+.coaches { list-style: none; margin: 0 0 20px; padding: 0; columns: 2; column-gap: 24px; }
+.coaches li { margin-bottom: 10px; break-inside: avoid; line-height: 24px; }
+.coaches span { display: block; color: var(--muted); font-size: 16px; padding-left: 5px; }
+
+.contact { list-style: none; margin: 0 0 20px; padding: 0; }
+.contact li { margin-bottom: 8px; }
+
+footer { color: var(--muted); font-size: 15px; line-height: 22px; }
+footer p { margin-bottom: 4px; }
+
+@media (max-width: 767px) {
+  .page { grid-template-columns: 1fr; gap: 28px; padding-top: 32px; padding-inline: 16px; }
+  .photo { position: static; }
+  .photo img { max-width: 260px; }
+  h1 { font-size: 40px; line-height: 44px; }
 }
 
-.intro p:not(.lede) { max-width: var(--measure); color: var(--ink-soft); margin: 1rem 0 0; }
-
-.portrait {
-  margin: 0;
-  border-bottom: 0.5rem solid var(--bib);
-}
-.portrait img { width: 100%; aspect-ratio: 617 / 720; object-fit: cover; }
-
-/* The track: three numbered lanes, one per thing I'm working on */
-
-.track {
-  background: var(--track);
-  color: var(--chalk);
-  padding-block: 0.25rem;
-  overflow-x: clip;
-}
-
-.lanes { list-style: none; margin-block: 0; }
-
-.lane {
-  position: relative;
-  display: grid;
-  grid-template-columns: 4.5rem minmax(0, 1fr) auto;
-  gap: 0 clamp(1rem, 3vw, 2.5rem);
-  align-items: center;
-  padding-block: clamp(1.5rem, 3.5vw, 2.25rem);
-}
-
-/* Lane lines run edge to edge, past the content column */
-.lane::after {
-  content: "";
-  position: absolute;
-  left: calc(-50vw + 50%);
-  right: calc(-50vw + 50%);
-  bottom: 0;
-  height: 3px;
-  background: var(--chalk);
-  opacity: 0.9;
-  transform-origin: left;
-}
-.lane:first-child::before {
-  content: "";
-  position: absolute;
-  left: calc(-50vw + 50%);
-  right: calc(-50vw + 50%);
-  top: 0;
-  height: 3px;
-  background: var(--chalk);
-  opacity: 0.9;
-  transform-origin: left;
-}
-
-.lane-no {
-  font: 800 clamp(3.5rem, 8vw, 5.5rem)/1 var(--display);
-  color: var(--bib);
-  font-variant-numeric: tabular-nums;
-}
-
-.lane h2 {
-  margin: 0;
-  font: 700 clamp(1.75rem, 3.6vw, 2.5rem)/1.05 var(--display);
-  letter-spacing: 0.01em;
-}
-
-.lane p { margin: 0.5rem 0 0; max-width: 34rem; color: #dbe5f4; }
-
-.lane-go {
-  justify-self: end;
-  font-weight: 700;
-  white-space: nowrap;
-  padding: 0.6rem 1rem;
-  background: var(--chalk);
-  color: var(--track-deep);
-  text-decoration: none;
-  border-radius: 999px;
-}
-.lane-go:hover { background: var(--bib); color: #15233b; }
-
-/* The one moment of motion: lane lines get painted on load */
-@media (prefers-reduced-motion: no-preference) {
-  .lane::after, .lane:first-child::before { animation: paint 900ms cubic-bezier(.2,.7,.2,1) both; }
-  .lane:nth-child(1)::after { animation-delay: 120ms; }
-  .lane:nth-child(2)::after { animation-delay: 240ms; }
-  .lane:nth-child(3)::after { animation-delay: 360ms; }
-  @keyframes paint { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-}
-
-/* Coaches */
-
-.section { padding-block: clamp(3rem, 7vw, 5rem) 0; }
-
-.section h2 {
-  margin: 0;
-  font: 700 clamp(2rem, 4.5vw, 3rem)/1 var(--display);
-}
-
-.section > p { max-width: var(--measure); margin: 1rem 0 0; }
-
-.coaches {
-  list-style: none;
-  margin: 2rem 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-  border-top: 1px solid var(--rule);
-}
-.coaches li {
-  padding: 0.9rem 0;
-  border-bottom: 1px solid var(--rule);
-}
-.coaches a { font-weight: 700; }
-.coaches span { display: block; color: var(--ink-soft); font-size: 0.95rem; }
-
-/* Background + contact share a two-column row on wide screens */
-
-.pair {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(2rem, 6vw, 5rem);
-}
-.pair .section > p { max-width: 32rem; }
-
-.contact-list { list-style: none; margin: 1.25rem 0 0; padding: 0; }
-.contact-list li { margin: 0.35rem 0; }
-.contact-list span { color: var(--ink-soft); }
-
-footer {
-  margin-top: clamp(3.5rem, 8vw, 6rem);
-  padding-block: 1.5rem 2.5rem;
-  border-top: 1px solid var(--rule);
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-}
-footer p { margin: 0.25rem 0; }
-
-/* 404 */
-
-.lost { padding-block: clamp(4rem, 12vw, 8rem); }
-.lost .name { font-size: clamp(3.5rem, 12vw, 8rem); }
-.lost p { max-width: var(--measure); font-size: 1.25rem; }
-
-@media (max-width: 760px) {
-  .intro { grid-template-columns: 1fr; }
-  .portrait { max-width: 15rem; grid-row: 1; }
-  .lane { grid-template-columns: 3.25rem minmax(0, 1fr); }
-  .lane-go { grid-column: 2; justify-self: start; margin-top: 1rem; }
-  .pair { grid-template-columns: 1fr; gap: 0; }
+@media (max-width: 479px) {
+  .coaches { columns: 1; }
 }
